@@ -24,4 +24,18 @@ toggleButton.addEventListener('click', () => {
     } else {
         localStorage.setItem('theme', 'light');
     }
+    updateButtonText();
+
+toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    
+    // Save preference
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+    
+    // Update button text after toggle
+    updateButtonText();
 });
