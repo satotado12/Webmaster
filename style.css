@@ -1,21 +1,31 @@
 :root {
     --bg-color: #ffffff;
     --text-color: #000000;
-    --btn-bg: #e0e0e0;
-    
-  
+    --wrapper-bg: #ffffff; 
     --header-bg: #2e7d32;     
     --header-text: #ffffff;  
+    --box-bg: #ffffff;
+    --box-text: #333333;
+    --box-border: #ddd;
+    --btn-bg: #333333;
+    --btn-text: #ffffff;
+    --cta-bg: #d1d1d1;
+    --cta-text: #000000;
 }
 
 body.dark-mode {
     --bg-color: #121212;
     --text-color: #ffffff;
-    --btn-bg: #333333;
-    
-
+    --wrapper-bg: #121212; 
     --header-bg: #1b5e20;
     --header-text: #ffffff;
+    --box-bg: #333333;
+    --box-text: #ffffff;
+    --box-border: #444444;
+    --btn-bg: #f0f0f0;
+    --btn-text: #121212;
+    --cta-bg: #444444;
+    --cta-text: #ffffff;
 }
 
 body {
@@ -23,16 +33,35 @@ body {
     color: var(--text-color);
     font-family: Arial, sans-serif;
     margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* Outer Grid Container matching wireframe */
+.site-container {
+    display: grid;
+    grid-template-columns: 220px 1fr; 
+    grid-template-rows: auto auto auto auto;
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--wrapper-bg);
+    padding: 15px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
 
+/* Main Header Title */
 .main-header {
+    grid-column: 1 / -1;
     background-color: var(--header-bg);
     color: var(--header-text);
-    width: 100%;
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
+    border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
 }
@@ -48,61 +77,23 @@ body {
     opacity: 0.9;
 }
 
-
-#theme-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--btn-bg);
-    color: var(--text-color);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    z-index: 1000;
-}
-
-.hero {
-    
-    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(images/humanityai.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    min-height: 450px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #ffffff;
-    padding: 20px;
-}
-
-.hero-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.hero-content p {
-    font-size: 1.25rem;
-    max-width: 600px;
-    margin: 0 auto;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
+/* Sidebar Navigation */
 .side-bar-nav {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
+    grid-row: 2 / span 2;
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    gap: 12px;
+    padding-top: 5px;
 }
 
-.side-bar-nav ul {
+.nav-label {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--header-text);
+    opacity: 0.9;
+}
+
+.nav-boxes {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -111,13 +102,13 @@ body {
     gap: 10px;
 }
 
-
+/* Navigation Links / Boxes */
 .side-bar-nav a {
     display: block;          
     text-decoration: none;   
-    color: #333;             
-    background-color: #fff;  
-    border: 1px solid #ddd;  
+    color: var(--box-text);             
+    background-color: var(--box-bg);  
+    border: 1px solid var(--box-border);  
     padding: 12px 18px;      
     border-radius: 6px;      
     font-weight: bold;
@@ -134,20 +125,119 @@ body {
     transform: translateX(4px);
 }
 
+/* Theme Toggle Button */
 #theme-toggle {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
     border: none;
     padding: 12px 18px;
-    border-radius: 6px;
     font-weight: bold;
     font-size: 15px;
     width: 178px;
     cursor: pointer;
+    border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #theme-toggle:hover {
-    background-color: #555;
+    opacity: 0.85;
+}
+
+/* Sidebar CTA Block */
+.sidebar-cta {
+    background-color: var(--cta-bg);
+    color: var(--cta-text);
+    padding: 25px 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-top: auto;
+}
+
+/* Hero Section */
+.hero {
+    grid-column: 2;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(images/humanityai.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Main Content Area */
+.main-content {
+    grid-column: 2;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Two columns now: wide text area on left, CTA on right */
+    grid-template-rows: auto auto;
+    gap: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.text-area-box {
+    grid-column: 1;           /* Takes up the left side */
+    grid-row: 1 / span 2;     /* Spans across top and bottom rows */
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.text-area-box p {
+    margin: 0;
+}
+
+.cta-center {
+    grid-column: 1;           /* Sits underneath the text area on the left */
+    grid-row: 2;
+    background-color: var(--cta-bg);
+    color: var(--cta-text);
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.cta-right {
+    grid-column: 2;           /* Stays on the far right column */
+    grid-row: 1 / span 2;     /* Spans top-to-bottom */
+    background-color: var(--cta-bg);
+    color: var(--cta-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-weight: bold;
+}
+/* Footer */
+.footer {
+    grid-column: 1 / -1;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
 }
