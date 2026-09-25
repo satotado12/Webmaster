@@ -91,3 +91,43 @@ body {
     margin: 0 auto;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
+
+
+.top-left-nav {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.top-left-nav a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    width: 140px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.top-left-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.top-left-nav a:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    transform: translateX(4px);
+}
