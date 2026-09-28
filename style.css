@@ -241,3 +241,52 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
 }
+
+
+
+
+
+/* ===========================
+   RESPONSIVE MOBILE MEDIA QUERY
+   =========================== */
+@media (max-width: 768px) {
+    
+    /* Collapse the outer grid into a single column */
+    .site-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    /* Unfix the sidebar so it flows naturally at the top on mobile */
+    .side-bar-nav {
+        position: static;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Make navigation boxes and dark mode button stretch full-width */
+    .side-bar-nav a, 
+    #theme-toggle {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    /* Reset grid elements to span the single mobile column */
+    .hero, 
+    .main-content {
+        grid-column: 1;
+    }
+
+    /* Collapse the inner main content grid into a single column */
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .text-area-box, 
+    .cta-center, 
+    .cta-right {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
