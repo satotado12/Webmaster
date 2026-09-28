@@ -125,6 +125,13 @@ body {
     transform: translateX(4px);
 }
 
+/* Active Page / Link Highlight Style */
+.side-bar-nav a.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
 /* Theme Toggle Button */
 #theme-toggle {
     background-color: var(--btn-bg);
