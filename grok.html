@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" type="image/png" href="favicomatic/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="favicomatic/favicon-16x16.png" sizes="16x16" />
-
+    
+    <!-- Anti-flash script for Dark Mode -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
 </head>
 <body>
 
@@ -40,15 +46,12 @@
         </section>
 
         <!-- Main Content Area -->
-        <main class="main-content">
+        <main class="main-content full-content">
             <div class="text-area-box">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Put your specific AI breakdown text here! Because of the class we are adding, this text will stretch across the entire space.
                 </p>
             </div>
-            <div class="cta-center">cta</div>
-            <div class="cta-right">cta</div>
         </main>
 
         <!-- Footer -->
