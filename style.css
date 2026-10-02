@@ -113,7 +113,8 @@ body {
     border-radius: 6px;      
     font-weight: bold;
     font-size: 15px;
-    width: 140px;
+    width: 100%;
+    box-sizing: border-box;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
     transition: all 0.3s ease;
 }
@@ -140,7 +141,8 @@ body {
     padding: 12px 18px;
     font-weight: bold;
     font-size: 15px;
-    width: 178px;
+    width: 100%;
+    box-sizing: border-box;
     cursor: pointer;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
