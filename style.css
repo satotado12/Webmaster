@@ -333,7 +333,13 @@ body {
 
 /* testing code for screen flash */
 
-body.dark-mode, html.dark-mode {
+/* If data-theme is dark, force the background dark right away before CSS loads fully */
+html[data-theme="dark"] {
+    background-color: #121212;
+}
+
+/* Your regular dark mode variables */
+body.dark-mode, html[data-theme="dark"] {
     background-color: var(--bg-color);
     color: var(--text-color);
 }

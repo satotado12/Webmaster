@@ -11,7 +11,7 @@
         <!-- Anti-flash script for Dark Mode -->
     <script>
         if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark-mode');
+            document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
 </head>
