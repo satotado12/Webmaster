@@ -11,6 +11,7 @@
     --btn-text: #ffffff;
     --cta-bg: #d1d1d1;
     --cta-text: #000000;
+    --active-bg: #2e7d32;
 }
 
 body.dark-mode {
@@ -26,6 +27,7 @@ body.dark-mode {
     --btn-text: #121212;
     --cta-bg: #444444;
     --cta-text: #ffffff;
+    --active-bg: #0d3b12;
 }
 
 body {
@@ -120,7 +122,7 @@ body {
 }
 
 .side-bar-nav a:hover {
-    background-color: #007bff; 
+    background-color: #388e3c; 
     color: #fff;               
     border-color: #007bff;     
     transform: translateX(4px);
@@ -128,9 +130,9 @@ body {
 
 
 .side-bar-nav a.active {
-    background-color: #007bff;
+    background-color: var(--active-bg);
     color: #fff;
-    border-color: #007bff;
+    border-color: var(--active-bg);
 }
 
 
@@ -159,7 +161,6 @@ body {
     color: var(--cta-text);
     padding: 25px 10px;
     text-align: center;
-    font-weight: bold;
     border-radius: 6px;
     margin-top: auto;
 }
