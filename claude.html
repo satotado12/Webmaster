@@ -11,7 +11,7 @@
         <!-- Anti-flash script for Dark Mode -->
     <script>
         if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.classList.add('dark-mode');
         }
     </script>
 </head>
@@ -35,7 +35,7 @@
                 <li><a href="claude.html" class="active">Claude</a></li>
             </ul>
             <button id="theme-toggle">Dark Mode</button>
-            <div class="sidebar-cta">DemystifAI is your clear, straightforward guide to understanding artificial intelligence without all the confusing tech talk. Whether you are curious about how the technology works or looking for practical ways to use it every day, we are here to help. Explore our breakdowns of the four major AI assistants to discover which tool fits your needs and how to get the most out of it.</div>
+            <div class="sidebar-cta">DemystifAI is your clear, straightforward guide to understanding artificial intelligence. Whether you are curious about how the technology works or looking for practical ways to use it every day, we are here to help. Explore our breakdowns of the four major AI assistants to discover which tool fits your needs and how to get the most out of it.</div>
         </aside>
 
         <!-- Hero Section -->
